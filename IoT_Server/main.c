@@ -96,17 +96,17 @@ int main(int argc, char** argv) {
     printf("UDP ok.\n");
 //    InitImageP300();
     printf("Imager ok.\n");
-    InitHandler(EEG);
+    InitHandler(0);
     printf("Init XitLib ok.\n");
     EEGRecorderInit(1,250);
     printf("EEG recorder ok.\n");
-    WriteMem(REG_LOG_LVL,5);
+    WriteMem(REG_LOG_LVL,0);
     
     InitLabyrinth();
-    AddCommand("/GET/ISWALL", "</labyrinth/iswall>", ISWALLGet);
-    AddCommand("/PUT/ROTATECC", "</labyrinth/rotate/cc>", RotateCC);
-    AddCommand("/PUT/ROTATECCW", "</labyrinth/rotate/ccw>", RotateCCW);
-    AddCommand("/PUT/MOVEFORWARD", "</labyrinth/move/forward>", MoveForward);
+    AddCommand("/GET/LABYRINTH/ISWALL", "</labyrinth/iswall>", ISWALLGet);
+    AddCommand("/PUT/LABYRINTH/ROTATE/CC", "</labyrinth/rotate/cc>", RotateCC);
+    AddCommand("/PUT/LABYRINTH/ROTATE/CCW", "</labyrinth/rotate/ccw>", RotateCCW);
+    AddCommand("/PUT/LABYRINTH/MOVE/FORWARD", "</labyrinth/move/forward>", MoveForward);
     
     printf(VERSION);
     if (!InitializeCriticalSectionAndSpinCount(&CriticalSection, 

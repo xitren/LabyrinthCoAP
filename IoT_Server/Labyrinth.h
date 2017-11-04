@@ -16,7 +16,7 @@
 
 #include "Handler.h"
 
-#define MAP_SIZE 100
+#define MAP_SIZE 30
 
 #ifdef __cplusplus
 extern "C" {

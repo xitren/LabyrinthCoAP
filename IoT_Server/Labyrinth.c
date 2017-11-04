@@ -126,7 +126,7 @@ Node *link( Node *n )
 			dest->parent = n;
 			
 			//Remove wall between nodes
-			nodes[n->x + ( x - n->x ) / 2 + ( n->y + ( y - n->y ) / 2 ) * width].c = '+';
+			nodes[n->x + ( x - n->x ) / 2 + ( n->y + ( y - n->y ) / 2 ) * width].c = ' ';
 			
 			//Return address of the child node
 			return dest;
@@ -146,6 +146,9 @@ void draw( )
 	{
 		for ( j = 0; j < width; j++ )
 		{
+                    if ((i == x) && (j == y))
+			printf( "%d", alpha );
+                    else
 			printf( "%c", nodes[j + i * width].c );
 		}
 		printf( "\n" );
@@ -195,7 +198,10 @@ int InitLabyrinth()
             if (nodes[j + i * width].c == 'F')
                 map[i][j] = 2;
             if (nodes[j + i * width].c == 'S')
+            {
                 map[i][j] = 3;
+                x = i; y = j;
+            }
         }
     }
     return 0;
@@ -255,6 +261,7 @@ int ISWALLGet(ParameterList_t *TempParam)
 //        DBG_LOG_ERROR("Invalid parameters.\n");
     }
     AddToTransmit("</ISWALLGet>\r\n\r");
+    draw();
 
     return(ret_val);
 }
@@ -270,7 +277,7 @@ int RotateCC(ParameterList_t *TempParam)
     /* this function appear to be semi-valid.                            */
     if ((TempParam))
     {
-        if (alpha = 0)
+        if (alpha <= 0)
             alpha = 3;
         else
             alpha = alpha - 1;
@@ -285,6 +292,7 @@ int RotateCC(ParameterList_t *TempParam)
 //        DBG_LOG_ERROR("Invalid parameters.\n");
     }
     AddToTransmit("</RotateCC>\r\n\r");
+    draw();
 
     return(ret_val);
 }
@@ -300,7 +308,7 @@ int RotateCCW(ParameterList_t *TempParam)
     /* this function appear to be semi-valid.                            */
     if ((TempParam))
     {
-        if (alpha = 3)
+        if (alpha >= 3)
             alpha = 0;
         else
             alpha = alpha + 1;
@@ -315,6 +323,7 @@ int RotateCCW(ParameterList_t *TempParam)
 //        DBG_LOG_ERROR("Invalid parameters.\n");
     }
     AddToTransmit("</RotateCCW>\r\n\r");
+    draw();
 
     return(ret_val);
 }
@@ -377,6 +386,7 @@ int MoveForward(ParameterList_t *TempParam)
 //        DBG_LOG_ERROR("Invalid parameters.\n");
     }
     AddToTransmit("</MoveForward>\r\n\r");
+    draw();
 
     return(ret_val);
 }

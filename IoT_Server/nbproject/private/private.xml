@@ -48,10 +48,10 @@
             <file>file:/C:/Users/xitre/Documents/Projects/IoT/IoT_Server/main.c</file>
         </group>
         <group name="Students">
-            <file>file:/C:/Users/xitre/Documents/Projects/LabyrinthCoAP/Worked/External/ExtFunctions.c</file>
-            <file>file:/C:/Users/xitre/Documents/Projects/LabyrinthCoAP/IoT_Server/main.c</file>
-            <file>file:/C:/Users/xitre/Documents/Projects/LabyrinthCoAP/IoT_Server/Labyrinth.h</file>
-            <file>file:/C:/Users/xitre/Documents/Projects/LabyrinthCoAP/IoT_Server/Labyrinth.c</file>
+            <file>file:/D:/Users/gusev_a/Documents/NetBeansProjects/LabyrinthCoAP/IoT_Server/main.c</file>
+            <file>file:/D:/Users/gusev_a/Documents/NetBeansProjects/LabyrinthCoAP/Worked/External/ExtFunctions.c</file>
+            <file>file:/D:/Users/gusev_a/Documents/NetBeansProjects/LabyrinthCoAP/IoT_Server/Labyrinth.h</file>
+            <file>file:/D:/Users/gusev_a/Documents/NetBeansProjects/LabyrinthCoAP/IoT_Server/Labyrinth.c</file>
         </group>
     </open-files>
 </project-private>
