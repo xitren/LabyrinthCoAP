@@ -362,13 +362,15 @@ int MoveForward(ParameterList_t *TempParam)
         }
         if (ax < 0)
             ap = 1;
-        if (ay < 0)
+        else if (ay < 0)
             ap = 1;
-        if (ax >= MAP_SIZE)
+        else if (ax >= MAP_SIZE)
             ap = 1;
-        if (ay >= MAP_SIZE)
+        else if (ay >= MAP_SIZE)
             ap = 1;
-        if (ap)
+        else
+            ap = map[ax][ay];
+        if (!ap)
         {
             x = ax;
             y = ay;
